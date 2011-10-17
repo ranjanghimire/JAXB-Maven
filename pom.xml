@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>JAXB-Maven</groupId>
+    <artifactId>JAXB-Maven</artifactId>
+    <version>1.0</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.ws.jaxme</groupId>
+                <artifactId>maven-jaxme-plugin</artifactId>
+                <configuration>
+                    <packageName>kz.tbp.jaxb</packageName>
+                    <schemas>
+                        <value>src/main/java/kz/tbp/jaxb/*.xsd</value>
+                    </schemas>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jaxme</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    
+</project>
