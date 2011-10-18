@@ -11,21 +11,28 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.ws.jaxme</groupId>
-                <artifactId>maven-jaxme-plugin</artifactId>
-                <configuration>
-                    <packageName>kz.tbp.jaxb</packageName>
-                    <schemas>
-                        <value>src/main/java/kz/tbp/jaxb/*.xsd</value>
-                    </schemas>
-                </configuration>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>jaxme</goal>
+                            <goal>generate</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <!--Path to generating resources-->
+                    <generateDirectory>src/main/java/kz/tpb/jaxb</generateDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
